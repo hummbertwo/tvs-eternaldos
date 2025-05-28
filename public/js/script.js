@@ -78,7 +78,7 @@ function initYouTube(videoId) {
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    videoId: '6OzLPSKrNMM',
+    videoId: 'bjY5EXx2A3o',
     playerVars: {
       autoplay: 0,
       controls: 0,
@@ -86,7 +86,7 @@ function onYouTubeIframeAPIReady() {
       modestbranding: 1,
       fs: 0,
       loop: 1,
-      playlist: '6OzLPSKrNMM',
+      playlist: 'bjY5EXx2A3o',
       disablekb: 1,
     },
     events: {
