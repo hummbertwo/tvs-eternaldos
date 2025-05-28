@@ -33,7 +33,6 @@ fetch('/api/session').then(res => res.json()).then(data => {
   if (data.loggedIn) {
     document.getElementById("login-screen").style.display = "none";
     elements.protected.style.display = "block";
-    init();
     loadVideoFromBackend();
   }
 });
