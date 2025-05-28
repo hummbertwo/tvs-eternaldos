@@ -34,8 +34,47 @@ fetch('/api/session').then(res => res.json()).then(data => {
     document.getElementById("login-screen").style.display = "none";
     elements.protected.style.display = "block";
     init();
+    loadVideoFromBackend();
   }
 });
+
+function loadVideoFromBackend() {
+  fetch('/api/video')
+    .then(res => res.json())
+    .then(data => {
+      if (data.id) {
+        initYouTube(data.id);
+      } else {
+        console.error("No autorizado para ver el video");
+      }
+    });
+}
+
+function initYouTube(videoId) {
+  player = new YT.Player('player', {
+    videoId: videoId,
+    playerVars: {
+      autoplay: 0,
+      controls: 0,
+      rel: 0,
+      modestbranding: 1,
+      fs: 0,
+      loop: 1,
+      playlist: videoId,
+      disablekb: 1,
+    },
+    events: {
+      onReady: (event) => {
+        const btn = document.getElementById("playButton");
+        btn.addEventListener("click", () => {
+          event.target.playVideo();
+          btn.style.display = "none";
+        });
+      }
+    }
+  });
+}
+
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
