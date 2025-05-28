@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pantalla Informativa - SkyReach Condo</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <!-- Login -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <h2>Acceso</h2>
+      <input type="text" id="username" placeholder="Usuario" />
+      <input type="password" id="password" placeholder="Contraseña" />
+      <button id="loginBtn">Entrar</button>
+      <p id="login-error" style="color:red; display:none;">Credenciales incorrectas</p>
+    </div>
+  </div>
+
+  <!-- Contenido protegido -->
+  <main style="display:none;" id="protected-content">
+    <div class="weather-container">
+      <img id="weatherIcon" alt="Clima" />
+      <div class="temp-time-container">
+        <span id="temperature">--°</span>
+        <div class="datetime-container">
+          <div id="date">---</div>
+          <div id="day">---</div>
+          <span id="time">--:--</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <div id="player"></div>
+    </div>
+
+    <button id="playButton">▶ Reproducir</button>
+
+    <div class="footer" id="footer">
+      <div class="marquee">
+        <p>🔹 EVENTO MAR 12-16 🔹 MEET OUR NEW CFO - JOHN 🔹</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
